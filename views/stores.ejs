@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stores Information</title>
+    <!-- style for table -->
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stores Information</h1>
+    <a href="/addStore">Add Store</a><!-- link to add store page -->
+    <table>
+        <thead>
+            <tr>
+                <!-- defineing columns -->
+                <th>Store ID</th>
+                <th>Location</th>
+                <th>Manager ID</th>
+                <th>Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <% stores.forEach(function(store) { %><!-- getting table info from getstore query -->
+                <tr>
+                    <!-- Defining rows -->
+                    <td><%= store.sid %></td>
+                    <td><%= store.location %></td>
+                    <td><%= store.mgrid %></td>
+                    <td>
+                        <a href="/stores/<%= store.sid %>">Update</a> <!-- update button for storeid to be sent to update page -->
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <li><a href="/">Home</a></li>
+</body>
+</html>

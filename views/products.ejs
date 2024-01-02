@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products Information</title>
+    <!-- style for table -->
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Products Information</h1>
+    <table>
+        <thead>
+            <!-- defining columns -->
+            <tr>
+                <th>Product ID</th>
+                <th>Description</th>
+                <th>Store ID</th>
+                <th>Location</th>
+                <th>Price</th>
+                <th>Action</th> 
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach(function(product) { %><!-- getting table info from the getproducts query stored in product -->
+                <tr>
+                    <!-- defining rows -->
+                    <td><%= product.productid %></td>
+                    <td><%= product.description %></td>
+                    <td><%= product.storeid %></td>
+                    <td><%= product.location %></td>
+                    <td><%= product.price %></td>
+                    <td>
+                        <a href="/productsdelete/<%= product.productid %>">Delete <%= product.description %></a><!-- link to delete doesnt work as only send GET request unsure how to make it send DELETE -->
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <li><a href="/">Home</a></li>
+</body>
+</html>

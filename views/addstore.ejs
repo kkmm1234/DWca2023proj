@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Store</title>
+</head>
+<body>
+    <h1>Add Store</h1>
+    <form action="/addstores" method="POST"><!-- form calls the addstore method by sending a post request -->
+        <label for="sid">Store ID:</label>
+        <input type="text" id="sid" name="sid" placeholder="Enter Store ID" required><!-- input for new id-->
+        <br><br>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" placeholder="Enter Location" required><!-- input for location -->
+        <br><br>
+        <label for="mgrid">Manager ID:</label>
+        <input type="text" id="mgrid" name="mgrid" placeholder="Enter Manager ID" required><!-- input for mgrid -->
+        <br><br>
+        <button type="submit">Add Store</button><!-- submit button runs form -->
+    </form>
+    <li><a href="/">Home</a></li><!-- link back to homepage -->
+</body>
+</html>

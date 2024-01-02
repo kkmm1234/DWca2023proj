@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Store</title>
+</head>
+<body>
+    <h1>Update Store</h1>
+    <form id="update" action="/updateStores/<%= store.sid %>" method="POST"><!-- form sends update by POST request to update query -->
+        <label for="sid">StoreID:</label>
+        <input type="text" id="sid" name="sid" value="<%= store.sid %>"><!-- input for updated sid -->
+        <br><br>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" value="<%= store.location %>"><!-- input for updated location -->
+        <br><br>
+        <label for="mgrid">Manager ID:</label>
+        <input type="text" id="mgrid" name="mgrid" value="<%= store.mgrid %>"><!-- input for updated mgrid -->
+        <br><br>
+        <button type="submit">Update Store</button><!-- button runs form -->
+      </form> 
+      <li><a href="/">Home</a></li>     
+</body>
+</html>
